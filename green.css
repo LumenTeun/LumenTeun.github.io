@@ -33,19 +33,25 @@ p{
     text-align: left;
 }
 
+a, a:visited{
+    color: #e9897c;
+    text-decoration: none;
+}
+
 #info{
     width: 18rem;
     border: 0.3rem solid #eeeeee;
 }
 
 /* Sets the colors when selecting text. */
-::selection{
-    background-color: #333333;
-    color: #fdd190;
-}
 ::-moz-selection{
     background-color: #eeeeee;
-    color: #333333;
+    color: #222222;
+}
+
+::selection{
+    background-color: #eeeeee;
+    color: #222222;
 }
 
 /* Fixes a bug with SVG files in IE9. */
