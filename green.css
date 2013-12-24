@@ -1,0 +1,58 @@
+@font-face{
+    font-family: 'Railway';
+    src: url('railway.ttf');
+}
+html{
+    font-size: 16px; /* Sets the root font-size so that rems work properly. */
+    -webkit-text-size-adjust: 100%; /* Prevents mobile browsers from adjusting the font. */
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background-image: url("images/background.png");
+    background-attachment: fixed;
+}
+html, body, div, p, h1{
+    margin: 0rem auto;
+    padding: 0rem;
+    text-align: center;
+    color: #eeeeee;
+    font-family: Railway;
+}
+
+img{
+    margin: 0.5rem 0.25rem;
+}
+
+h1{
+    font-size: 2rem;
+    font-weight: normal;
+    padding: 0rem;
+    /*line-height: 1.2rem;*/
+}
+
+p{
+    text-align: left;
+}
+
+#info{
+    width: 18rem;
+    border: 0.3rem solid #eeeeee;
+}
+
+/* Sets the colors when selecting text. */
+::selection{
+    background-color: #333333;
+    color: #fdd190;
+}
+::-moz-selection{
+    background-color: #eeeeee;
+    color: #333333;
+}
+
+/* Fixes a bug with SVG files in IE9. */
+svg:not(:root){overflow: hidden;}
+
+/* Fixes some image resizing bug in IE7. */
+img{-ms-interpolation-mode: bicubic;}
+
+
+
