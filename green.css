@@ -36,11 +36,16 @@ p{
 a, a:visited{
     color: #e9897c;
     text-decoration: none;
+    outline: none;
 }
 
 #info{
     width: 20rem;
     border: 0.3rem solid #eeeeee;
+}
+
+#content{
+    margin-top: 18rem;
 }
 
 /* Sets the colors when selecting text. */
