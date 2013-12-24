@@ -1,6 +1,7 @@
 function repositionContent(){
-    $('h1').css({"margin-top": window.innerHeight/3});
+    $('#content').css({"margin-top": window.innerHeight/2.5});
 }
+
 $(document).ready(function(){
     repositionContent();
 });

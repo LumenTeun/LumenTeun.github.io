@@ -2,8 +2,7 @@ TODO
 =======
 
  * Background
- * Spacing
+ * Placement of content. jQuery magic. outerHeight()
  * TODO
- * README
  * Chromium selection
  * Everything else
