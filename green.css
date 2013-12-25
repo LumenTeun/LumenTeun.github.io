@@ -55,7 +55,7 @@ a, a:visited{
 }
 
 ::selection{
-    background-color: #eeeeee;
+    background-color: rgba(238, 238, 238, 0.99);
     color: #222222;
 }
 
