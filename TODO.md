@@ -7,3 +7,4 @@ TODO
  * Chromium selection
  * Links
  * Everything else
+ * Optimize for mobile
