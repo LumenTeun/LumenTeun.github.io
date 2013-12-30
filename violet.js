@@ -1,5 +1,5 @@
 function repositionContent(){
-    $('#content').css({"margin-top": window.innerHeight/2.5});
+    $('#content').css({"top": window.innerHeight/2 - $('#content').height() / 2});
 }
 
 $(document).ready(function(){

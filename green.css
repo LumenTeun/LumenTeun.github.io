@@ -46,7 +46,8 @@ a, a:visited{
 }
 
 #content{
-    margin-top: 18rem;
+    position: relative;
+    top: 12rem;
 }
 
 /* Sets the colors when selecting text. */
