@@ -10,16 +10,13 @@ html{
     background-image: url("images/background.png");
     background-attachment: fixed;
 }
+
 html, body, div, p, h1{
     margin: 0rem auto;
     padding: 0rem;
     text-align: center;
     color: #eeeeee;
     font-family: Railway;
-}
-
-img{
-    margin: 0.5rem 0.25rem;
 }
 
 h1{
@@ -42,14 +39,13 @@ a, a:visited{
 }
 
 #info{
-    width: -moz-max-content;
-    width: intrinsic;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
     border: 0.3rem solid #eeeeee;
 }
 
 #content{
     position: relative;
-    top: 12rem;
 }
 
 /* Sets the colors when selecting text. */
