@@ -3,7 +3,7 @@
     src: url('railway.ttf');
 }
 html{
-    font-size: 19px; /* Sets the root font-size so that rems work properly. */
+    font-size: 16px; /* Sets the root font-size so that rems work properly. */
     -webkit-text-size-adjust: none; /* Prevents mobile browsers from adjusting the font. */
     -moz-text-size-adjust: none;
     -ms-text-size-adjust: none;
@@ -23,13 +23,14 @@ img{
 }
 
 h1{
-    font-size: 2rem;
+    font-size: 2.3rem;
     font-weight: normal;
     padding: 0rem;
-    line-height: 2rem;
+    line-height: 2.5rem;
 }
 
 p{
+    font-size: 1.2rem;
     text-align: left;
 }
 
