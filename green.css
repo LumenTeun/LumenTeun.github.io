@@ -4,9 +4,9 @@
 }
 html{
     font-size: 19px; /* Sets the root font-size so that rems work properly. */
-    -webkit-text-size-adjust: 100%; /* Prevents mobile browsers from adjusting the font. */
-    -moz-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: none; /* Prevents mobile browsers from adjusting the font. */
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
     background-image: url("images/background.png");
     background-attachment: fixed;
 }
@@ -40,7 +40,8 @@ a, a:visited{
 }
 
 #info{
-    width: 20rem;
+    width: -moz-max-content;
+    width: intrinsic;
     border: 0.3rem solid #eeeeee;
 }
 
