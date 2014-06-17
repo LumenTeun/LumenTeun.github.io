@@ -7,15 +7,14 @@ html{
     -webkit-text-size-adjust: none; /* Prevents mobile browsers from adjusting the font. */
     -moz-text-size-adjust: none;
     -ms-text-size-adjust: none;
-    background-image: url("images/background.png");
-    background-attachment: fixed;
+    background-color: #eeeeee;
 }
 
 html, body, div, p, h1{
     margin: 0rem auto;
     padding: 0rem;
     text-align: center;
-    color: #eeeeee;
+    color: #222222;
     font-family: Railway;
 }
 
@@ -33,7 +32,7 @@ p{
 }
 
 a, a:visited{
-    color: #e9897c;
+    color: #b34334;
     text-decoration: none;
     outline: none;
 }
@@ -48,22 +47,19 @@ a, a:visited{
 #info{
     max-width: -webkit-max-content;
     max-width: -moz-max-content;
-    border: 0.3rem solid #eeeeee;
-}
-
-#content{
-    position: relative;
+    margin: 2rem auto;
+    border: 0.3rem solid #222222;
 }
 
 /* Sets the colors when selecting text. */
 ::-moz-selection{
-    background-color: #eeeeee;
-    color: #222222;
+    background-color: #222222;
+    color: #eeeeee;
 }
 
 ::selection{
-    background-color: rgba(238, 238, 238, 0.99);
-    color: #222222;
+    background-color: rgba(34, 34, 34, 0.99);
+    color: #eeeeee;
 }
 
 /* Fixes a bug with SVG files in IE9. */
