@@ -38,6 +38,13 @@ a, a:visited{
     outline: none;
 }
 
+#top{
+    background-image: url("images/me.png");
+    background-position: center;
+    background-size: 100%; /* proof */
+    height: 20rem;
+}
+
 #info{
     max-width: -webkit-max-content;
     max-width: -moz-max-content;
