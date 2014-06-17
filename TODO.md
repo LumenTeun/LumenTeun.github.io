@@ -9,3 +9,4 @@ v2.0
  * Copyright info ( Creative Commons )
  * Scroll buttons. Right/left.
  * More links
+ * Background image 1080px
