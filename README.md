@@ -6,3 +6,5 @@ It's currently under construction on a "when I feel like it"-basis, so updates w
 I'm planning to expand it a bit, but we'll see when changes actually go live.
 
 The font is Railway Sans, a SIL Open Font licensed font by Greg Fleming. Check it out here: https://github.com/GregFleming/Railway-Sans
+
+The icons are from Font Awesome by Dave Gandy. Check that out at http://fontawesome.io
