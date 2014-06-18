@@ -7,15 +7,14 @@ html{
     -webkit-text-size-adjust: none; /* Prevents mobile browsers from adjusting the font. */
     -moz-text-size-adjust: none;
     -ms-text-size-adjust: none;
-    background-image: url("images/background.png");
-    background-attachment: fixed;
+    background-color: #eeeeee;
 }
 
 html, body, div, p, h1{
     margin: 0rem auto;
     padding: 0rem;
     text-align: center;
-    color: #eeeeee;
+    color: #222222;
     font-family: Railway;
 }
 
@@ -33,30 +32,65 @@ p{
 }
 
 a, a:visited{
-    color: #e9897c;
+    color: #b34334;
     text-decoration: none;
     outline: none;
+}
+
+#me{
+    margin: 3rem auto;
+    height: 15rem;
+}
+
+#top{
+    background-image: url("images/background.png");
+    background-position: bottom;
+    height: 20rem;
 }
 
 #info{
     max-width: -webkit-max-content;
     max-width: -moz-max-content;
-    border: 0.3rem solid #eeeeee;
+    margin: 2rem auto;
+    border: 0.3rem solid #222222;
 }
 
-#content{
-    position: relative;
+.right{
+    float: right;
+}
+
+.left{
+    float: left;
+}
+
+#footer > div{
+    margin: 0.25rem 0.5rem;
+}
+
+#footer a, #footer a:visited{
+    color: #222222;
+}
+
+#footer a:hover{
+    color: #b34334;
+}
+
+#footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0rem;
+    font-size: 0.75rem;
 }
 
 /* Sets the colors when selecting text. */
 ::-moz-selection{
-    background-color: #eeeeee;
-    color: #222222;
+    background-color: #222222;
+    color: #eeeeee;
 }
 
 ::selection{
-    background-color: rgba(238, 238, 238, 0.99);
-    color: #222222;
+    background-color: rgba(34, 34, 34, 0.99);
+    color: #eeeeee;
 }
 
 /* Fixes a bug with SVG files in IE9. */
