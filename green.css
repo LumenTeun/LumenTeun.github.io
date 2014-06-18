@@ -62,6 +62,15 @@ a, a:visited{
 #footer > div{
     margin: 0.25rem 0.5rem;
 }
+
+#footer a, #footer a:visited{
+    color: #222222;
+}
+
+#footer a:hover{
+    color: #b34334;
+}
+
 #footer{
     width: 100%;
     position: fixed;
