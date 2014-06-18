@@ -10,3 +10,4 @@ v2.0
  * Scroll buttons. Right/left.
  * More links
  * Background image 1080px
+ * Fix JS magic numbers.
