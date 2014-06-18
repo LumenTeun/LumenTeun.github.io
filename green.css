@@ -37,10 +37,14 @@ a, a:visited{
     outline: none;
 }
 
+#me{
+    margin: 3rem auto;
+    height: 15rem;
+}
+
 #top{
-    background-image: url("images/me.png");
-    background-position: center;
-    background-size: 100%; /* proof */
+    background-image: url("images/background.png");
+    background-position: bottom;
     height: 20rem;
 }
 
