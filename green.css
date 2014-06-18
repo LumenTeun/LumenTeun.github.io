@@ -51,6 +51,24 @@ a, a:visited{
     border: 0.3rem solid #222222;
 }
 
+.right{
+    float: right;
+}
+
+.left{
+    float: left;
+}
+
+#footer > div{
+    margin: 0.25rem 0.5rem;
+}
+#footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0rem;
+    font-size: 0.75rem;
+}
+
 /* Sets the colors when selecting text. */
 ::-moz-selection{
     background-color: #222222;
