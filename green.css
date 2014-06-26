@@ -48,6 +48,13 @@ a, a:visited{
     height: 20rem;
 }
 
+#bottom{
+    background-image: url("images/background2.png");
+    background-position: top;
+    background-repeat: repeat-x;
+    height: 20rem;
+}
+
 #info{
     max-width: -webkit-max-content;
     max-width: -moz-max-content;
