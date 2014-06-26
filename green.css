@@ -38,8 +38,9 @@ a, a:visited{
 }
 
 #me{
-    margin: 3rem auto;
-    height: 15rem;
+    margin: 0rem auto;
+    position: relative;
+    top: 6rem;
 }
 
 #top{
@@ -58,8 +59,10 @@ a, a:visited{
 #info{
     max-width: -webkit-max-content;
     max-width: -moz-max-content;
-    margin: 2rem auto;
+    margin: 0rem auto;
     border: 0.3rem solid #222222;
+    position: relative;
+    top: 6rem;
 }
 
 .right{
