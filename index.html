@@ -25,7 +25,22 @@
     <div id="bottom">
     <div id="info">
       <p>
-        Hello.<br>
+        <script>
+          var greetings = ['Hello',
+                          'Hi there',
+                          'Hey',
+                          'Greetings',
+                          'Welcome',
+                          'Hiya',
+                          'Hejsan',
+                          'Good day',
+                          'Greetings my friend, stay a while and listen',
+                          'Good evening'];
+
+          var hello = greetings[ Math.floor(Math.random() * greetings.length) ];
+          $('p').append(hello);
+        </script>
+        <br>
         My name is <a href="mailto:teun@lutic.org">Anton Strömkvist</a>.<br>
         For fun I write <a href="https://github.com/LumenTeun" target="_blank">code</a> and translate stuff.<br>
         Let me know if you need anything in Swedish.<br>
