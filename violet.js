@@ -1,5 +1,5 @@
 function repositionContent(){
-    $('#top').css({ "height": window.innerHeight/2.5});
+    $('#top').css({ "height": window.innerHeight/4});
     $('#me').css({ "height": window.innerHeight/3, "top": window.innerHeight/24 });
     $('#info').css({ "top": window.innerHeight/5 });
 }
