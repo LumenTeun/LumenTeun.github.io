@@ -1,7 +1,3 @@
-@font-face{
-    font-family: 'Railway';
-    src: url('railway.ttf');
-}
 html{
     font-size: 16px; /* Sets the root font-size so that rems work properly. */
     -webkit-text-size-adjust: none; /* Prevents mobile browsers from adjusting the font. */
@@ -15,7 +11,7 @@ html, body, div, p, h1{
     padding: 0rem;
     text-align: center;
     color: #222222;
-    font-family: Railway;
+    font-family: 'RailwayRegular';
 }
 
 h1{
