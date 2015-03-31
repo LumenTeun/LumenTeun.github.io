@@ -42,14 +42,13 @@ a, a:visited {
 #top {
     background-image: url("images/background.png");
     background-position: bottom;
-    height: 20rem;
+    height: 16rem;
 }
 
 #bottom {
     background-image: url("images/background2.png");
     background-position: top;
     background-repeat: repeat-x;
-    height: 20rem;
 }
 
 #info {
@@ -86,6 +85,18 @@ a, a:visited {
     position: fixed;
     bottom: 0rem;
     font-size: 0.75rem;
+}
+
+@media (max-height: 37rem) {
+    #top {
+        height: 8rem;
+    }
+}
+
+@media (max-height: 28rem) {
+    #top {
+        height: 4rem;
+    }
 }
 
 /* Sets the colors when selecting text. */
