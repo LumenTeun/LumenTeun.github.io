@@ -5,8 +5,9 @@
     <title>lutic</title>
 
     <!-- Stylesheets -->
+    <link type="text/css" rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
     <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    <link type="text/css" rel="stylesheet" href="//openfontlibrary.org/face/railway-sans" media="screen"> 
+    <link type="text/css" rel="stylesheet" href="http://openfontlibrary.org/face/railway-sans" media="screen"> 
     <link type="text/css" rel="stylesheet" href="style.css">
 
     <!-- Metadata -->
@@ -34,12 +35,13 @@
                           'Hiya',
                           'Hejsan',
                           'Good day',
-                          'Greetings my friend, stay a while and listen',
+                          'Hello, my friend. Stay awhile and listen',
                           'Good evening'];
 
           var hello = greetings[ Math.floor(Math.random() * greetings.length) ];
-          $('p').append(hello + '.');
+          $('p').append(hello + '!');
         </script>
+        <noscript>Hello!</noscript>
         <br>
         My name is <a href="mailto:anton@lutic.org">Anton Strömkvist</a>.<br>
         For fun I write <a href="https://github.com/LumenTeun">code</a> and <a href="https://www.transifex.com/accounts/profile/Lumen/">translate</a> stuff.<br>
