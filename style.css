@@ -1,117 +1,50 @@
 html {
-    font-size: 16px; /* Sets the root font-size so that rems work properly. */
-    -webkit-text-size-adjust: none; /* Prevents mobile browsers from adjusting the font. */
-    -moz-text-size-adjust: none;
-    -ms-text-size-adjust: none;
-    background-color: #eeeeee;
+  background-color: #3c3b37;
+       font-family: 'tewi', monospace;
+        box-sizing: border-box;
+         font-size: 12px;
+            height: 100%;
+             color: #dcdccc;
 }
 
-html, body, div, p, h1 {
-    margin: 0rem auto;
-    padding: 0rem;
-    text-align: center;
-    color: #222222;
-    font-family: 'RailwayRegular';
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-h1 {
-    font-size: 2.3rem;
-    font-weight: normal;
-    padding: 0rem;
-    line-height: 2.5rem;
+body {
+  justify-content: center;
+      align-items: center;
+          display: flex;
+           height: 100%;
 }
 
-p {
-    font-size: 1.2rem;
-    text-align: left;
-    padding: 0.2rem;
+#terminal {
+  flex-grow: 1;
+  max-width: 48rem;
+   overflow: hidden;
+    padding: .2rem;
+     border: .2rem solid #6f6f6f;
+     height: 24rem;
 }
 
-a, a:visited {
-    color: #b34334;
-    text-decoration: none;
-    outline: none;
+#prompt {
+  align-items: center;
+      display: flex;
 }
 
-#me {
-    margin: 0rem auto;
-    position: relative;
-    top: 6rem;
+#stdin {
+  background-color: inherit;
+         flex-grow: 1;
+           outline: 0;
+            border: 0;
 }
 
-#top {
-    background-image: url("images/background.png");
-    background-position: bottom;
-    height: 16rem;
-}
-
-#bottom {
-    background-image: url("images/background2.png");
-    background-position: top;
-    background-repeat: repeat-x;
-}
-
-#info {
-    max-width: -webkit-max-content;
-    max-width: -moz-max-content;
-    margin: 0rem auto;
-    border: 0.3rem solid #222222;
-    position: relative;
-    top: 6rem;
-}
-
-.right {
-    float: right;
-}
-
-.left {
-    float: left;
-}
-
-#footer > div {
-    margin: 0.25rem 0.5rem;
-}
-
-#footer a, #footer a:visited {
-    color: #222222;
-}
-
-#footer a:hover {
-    color: #b34334;
-}
-
-#footer {
-    width: 100%;
-    position: fixed;
-    bottom: 0rem;
-    font-size: 0.75rem;
-}
-
-@media (max-height: 37rem) {
-    #top {
-        height: 8rem;
-    }
-}
-
-@media (max-height: 28rem) {
-    #top {
-        height: 4rem;
-    }
-}
-
-/* Sets the colors when selecting text. */
 ::-moz-selection {
-    background-color: #222222;
-    color: #eeeeee;
+    background-color: #dcdccc;
+               color: #3c3b37;
 }
 
 ::selection {
-    background-color: rgba(34, 34, 34, 0.99);
-    color: #eeeeee;
+    background-color: rgba(220, 220, 204, 0.99);
+               color: #3c3b37;
 }
-
-/* Fixes a bug with SVG files in IE9. */
-svg:not(:root){overflow: hidden;}
-
-/* Fixes some image resizing bug in IE7. */
-img {-ms-interpolation-mode: bicubic;}

@@ -1,61 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Title -->
-    <title>lutic</title>
-
-    <!-- Stylesheets -->
-    <link type="text/css" rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
-    <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    <link type="text/css" rel="stylesheet" href="http://openfontlibrary.org/face/railway-sans" media="screen"> 
-    <link type="text/css" rel="stylesheet" href="style.css">
-
-    <!-- Metadata -->
+    <title>/home/ahstro</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="images/favicon.png">
-
-    <!-- JavaScript -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
   </head>
-
   <body>
-    <div id="top">
-    </div>
-    <div id="bottom">
-    <div id="info">
-      <p>
-        <script>
-          var greetings = ['Hello',
-                          'Hi there',
-                          'Hey',
-                          'Greetings',
-                          'Welcome',
-                          'Hiya',
-                          'Hejsan',
-                          'Good day',
-                          'Hello, my friend. Stay awhile and listen',
-                          'Good evening'];
-
-          var hello = greetings[ Math.floor(Math.random() * greetings.length) ];
-          $('p').append(hello + '!');
-        </script>
-        <noscript>Hello!</noscript>
-        <br>
-        My name is <a href="mailto:anton@lutic.org">Anton Strömkvist</a>.<br>
-        For fun I write <a href="https://github.com/LumenTeun">code</a> and <a href="https://www.transifex.com/accounts/profile/Lumen/">translate</a> stuff.<br>
-        Let me know if you need anything in Swedish.<br>
-        I'm also on <a href="https://twitter.com/teunlutic">Twitter</a>, sort of.
-      </p>
-    </div>
-    <div id="footer">
-      <div class="left">
-        <a href="mailto:anton@lutic.org"><span class="fa fa-envelope-square fa-3x"></span></a>
-        <a href="https://github.com/LumenTeun"><span class="fa fa-github fa-3x"></span></a>
-        <a href="https://twitter.com/teunlutic"><span class="fa fa-twitter fa-3x"></span></a>
-        <a href="docs/publickey.txt"><span class="fa fa-lock fa-3x"></span></a>
+    <main id="terminal">
+      <div id="stdout"></div>
+      <div id="prompt">
+        <label for="stdin">~&nbsp;</label>
+        <input id="stdin" type="text" autocomplete="off" inputmode="verbatim" autofocus>
       </div>
-    </div>
-  </div>
+    </main>
   </body>
 </html>

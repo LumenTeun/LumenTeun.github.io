@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title /home/ahstro
+
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no")
+
+    link(rel="stylesheet", href="https://necolas.github.io/normalize.css/latest/normalize.css")
+    link(rel="stylesheet", href="style.css")
+    link(rel="shortcut icon", href="images/favicon.png")
+
+    script(type="text/javascript", src="script.js")
+
+  body
+    main#terminal
+      #stdout
+      #prompt
+        label(for="stdin") ~&nbsp;
+        input#stdin(type="text", autocomplete="off", inputmode="verbatim", autofocus)
