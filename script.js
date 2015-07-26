@@ -13,6 +13,14 @@ function clear() {
   stdout.innerHTML = "";
 }
 
+function complete(uncompleted) {
+  if(uncompleted !== "") {
+    Object.keys(commands).forEach(function(command) {
+      if(command.indexOf(uncompleted) === 0) stdin.value = command;
+    });
+  }
+}
+
 function help() {
   echo("The available commands are:");
   Object.keys(commands).forEach(function(command) {
@@ -40,6 +48,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
       case 76:
         if(event.ctrlKey) clear();
         break;
+
+      case 9:
+        complete(stdin.value);
+        break;
+
     }
   });
 
