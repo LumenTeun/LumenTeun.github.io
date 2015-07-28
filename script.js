@@ -30,7 +30,7 @@ function about(what) {
       break;
 
     case "github":
-      echo("Open source is tha b0mb!<br>Find the source for this site and (almost) everything else I've ever made at <a href='https://twitter.com/ahstro_' target='_blank'>GitHub</a>.");
+      echo("Open source is tha b0mb!<br>Find the source for this site and (almost) everything else I've ever made at <a href='https://github.com/ahstro' target='_blank'>GitHub</a>.");
       break;
 
     case "xmpp":
