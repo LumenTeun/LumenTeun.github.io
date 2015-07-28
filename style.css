@@ -39,6 +39,19 @@ body {
             border: 0;
 }
 
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+            color: #8f99d9;
+}
+
+a:hover {
+  background-color: #8f99d9;
+             color: #3c3b37;
+}
+
 ::-moz-selection {
     background-color: #dcdccc;
                color: #3c3b37;
