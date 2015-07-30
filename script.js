@@ -2,6 +2,7 @@ var shellPrompt = "~ ";
 
 var abouts = [
   "facebook",
+  "telegram",
    "twitter",
     "github",
       "xmpp",
@@ -23,6 +24,10 @@ function about(what) {
   switch(what) {
     case "facebook":
       echo("Hahahaha... ha.. yeah.");
+      break;
+
+    case "telegram":
+      echo("E-mail not good enough? Need realtime chat? Hit me up on <a href='https://telegram.me/ahstro' target='_blank'>Telegram</a>.");
       break;
 
     case "twitter":
