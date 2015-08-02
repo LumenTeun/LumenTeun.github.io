@@ -53,7 +53,8 @@ a:hover {
 }
 
 a:focus {
-  outline: none;
+  text-decoration: underline;
+          outline: none;
 }
 
 ::-moz-selection {
