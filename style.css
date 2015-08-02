@@ -52,6 +52,10 @@ a:hover {
              color: #3c3b37;
 }
 
+a:focus {
+  outline: none;
+}
+
 ::-moz-selection {
     background-color: #dcdccc;
                color: #3c3b37;
