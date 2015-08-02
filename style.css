@@ -39,22 +39,16 @@ body {
             border: 0;
 }
 
-a,
-a:hover,
-a:focus,
-a:active {
+a {
   text-decoration: none;
             color: #8f99d9;
 }
 
+a:focus,
 a:hover {
   background-color: #8f99d9;
+           outline: none;
              color: #3c3b37;
-}
-
-a:focus {
-  text-decoration: underline;
-          outline: none;
 }
 
 ::-moz-selection {
