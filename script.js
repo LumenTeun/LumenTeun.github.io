@@ -101,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         break;
 
       case 9:
+        event.preventDefault(); // Prevents tabbing to URL bar
         complete(stdin.value);
         break;
 
