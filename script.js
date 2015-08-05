@@ -1,4 +1,6 @@
 var shellPrompt = "~ ";
+var currCmd = 0;
+var cmdHist = [""];
 
 var abouts = [
   "facebook",
@@ -76,6 +78,18 @@ function complete(uncompleted) {
   }
 }
 
+function scrollCmdHist(dir) {
+  if(dir ===  "up"  && currCmd + 1 < cmdHist.length) {
+    currCmd++;
+  }
+
+  if(dir === "down" && currCmd > 0) {
+    currCmd--;
+  }
+
+  stdin.value = cmdHist[currCmd];
+}
+
 function execute(command) {
   stdin.value = "";
   echo(shellPrompt + command);
@@ -86,6 +100,10 @@ function execute(command) {
   } else if(command) {
     echo("ash: command not found: " + command + "<br>try 'help' if you're lost");
   }
+
+  cmdHist.splice(1, 0, command); // Add commando to 2nd place, 1st is always ""
+  if(cmdHist.length > 32) cmdHist.pop() // Limit command history to 32
+  currCmd = 0; // Reset scroll position
   terminal.scrollTop = terminal.scrollHeight;
 }
 
@@ -105,6 +123,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
         complete(stdin.value);
         break;
 
+      case 38:
+        scrollCmdHist("up");
+        break;
+
+      case 80:
+        if(event.ctrlKey) {
+          event.preventDefault();
+          scrollCmdHist("up");
+        }
+        break;
+
+      case 40:
+        scrollCmdHist("down");
+        break;
+
+      case 78:
+        if(event.ctrlKey) {
+          event.preventDefault();
+          scrollCmdHist("down");
+        }
+        break;
     }
   });
 
