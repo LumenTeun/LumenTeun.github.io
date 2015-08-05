@@ -86,6 +86,7 @@ function execute(command) {
   } else if(command) {
     echo("ash: command not found: " + command + "<br>try 'help' if you're lost");
   }
+  terminal.scrollTop = terminal.scrollHeight;
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
