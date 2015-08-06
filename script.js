@@ -66,7 +66,6 @@ function help() {
   echo("The available commands are:");
   Object.keys(commands).concat(abouts).forEach(function(command) {
     echo(command);
-
   });
 }
 
@@ -108,14 +107,12 @@ function execute(command) {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
+
+  // Execute commands based on keydowns
   stdin.addEventListener("keydown", function(event) {
     switch(event.keyCode) {
       case 13:
         execute(stdin.value);
-        break;
-
-      case 76:
-        if(event.ctrlKey) clear();
         break;
 
       case 9:
@@ -127,27 +124,38 @@ document.addEventListener("DOMContentLoaded", function(event) {
         scrollCmdHist("up");
         break;
 
-      case 80:
-        if(event.ctrlKey) {
-          event.preventDefault();
-          scrollCmdHist("up");
-        }
-        break;
-
       case 40:
         scrollCmdHist("down");
         break;
 
-      case 78:
-        if(event.ctrlKey) {
-          event.preventDefault();
-          scrollCmdHist("down");
-        }
-        break;
     }
+
+    // Separate switch case for keydowns that require Ctrl
+    if(event.ctrlKey) {
+      switch(event.keyCode) {
+
+      case 76:
+        clear();
+        break;
+
+      case 78:
+        event.preventDefault();
+        scrollCmdHist("down");
+        break;
+
+      case 80:
+        event.preventDefault();
+        scrollCmdHist("up");
+        break;
+
+      }
+    }
+
   });
 
+  // Allow clicking the entire terminal to focus stdin
   terminal.addEventListener("click", function(event) {
     stdin.focus();
   });
+
 });
