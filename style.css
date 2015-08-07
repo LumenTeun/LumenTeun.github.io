@@ -21,6 +21,7 @@ body {
 #terminal {
   flex-grow: 1;
   max-width: 48rem;
+  word-wrap: break-word;
    overflow: hidden;
     padding: .2rem;
      border: .2rem solid #6f6f6f;
