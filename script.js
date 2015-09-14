@@ -7,6 +7,7 @@ var abouts = [
   "telegram",
    "twitter",
     "github",
+    "resume",
       "xmpp",
       "mail",
        "pgp"
@@ -38,6 +39,10 @@ function about(what) {
 
     case "github":
       echo("Open source is tha b0mb!<br>Find the source for this site and (almost) everything else I've ever made at <a href='https://github.com/ahstro' target='_blank'>GitHub</a>.");
+      break;
+
+    case "resume":
+      echo("Want to hire me? You should! Check out my <a href='http://lutic.org/resume' target='_blank'>resumé</a>.");
       break;
 
     case "xmpp":
