@@ -10,7 +10,8 @@ var abouts = [
     "resume",
       "xmpp",
       "mail",
-       "pgp"
+       "pgp",
+       "tox"
 ];
 
 var commands = {
@@ -55,6 +56,10 @@ function about(what) {
 
     case "pgp":
       echo("\"Encryption is overrated, right?\" - Everyone<br>My PGP-key is 0x50a3573efbfa9867, grab it from <a href='https://pgp.mit.edu/pks/lookup?op=vindex&search=0x50A3573EFBFA9867' traget='_blank'>MIT's keyserver</a>.");
+      break;
+
+    case "tox":
+      echo("H4rdc0re cryptokidZ use <a href='https://toxme.io/u/ahstro' target='_blank'>Tox</a>.");
       break;
 
     default:
