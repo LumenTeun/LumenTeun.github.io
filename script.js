@@ -43,7 +43,7 @@ function about(what) {
       break;
 
     case "resume":
-      echo("Want to hire me? You should! Check out my <a href='http://lutic.org/resume' target='_blank'>resumé</a>.");
+      echo("Want to hire me? You should! Check out my <a href='http://ahst.ro/resume' target='_blank'>resumé</a>.");
       break;
 
     case "xmpp":
