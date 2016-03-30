@@ -51,7 +51,7 @@ function about(what) {
       break;
 
     case "mail":
-      echo("You know that thing you use to register social media accounts and receive spam about penis enlargement pills and Google? You can actually use it to send messages as well.<br>My e-mail address is <a href='mailto:anton@lutic.org'>anton@lutic.org</a>");
+      echo("You know that thing you use to register social media accounts and receive spam about penis enlargement pills and Google? You can actually use it to send messages as well.<br>My e-mail address is <a href='mailto:hi@ahst.ro'>hi@ahst.ro</a>");
       break;
 
     case "pgp":
