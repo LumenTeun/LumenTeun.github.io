@@ -39,6 +39,7 @@ body {
            outline: 0;
             border: 0;
             cursor: default;
+             color: inherit;
 }
 
 a {
