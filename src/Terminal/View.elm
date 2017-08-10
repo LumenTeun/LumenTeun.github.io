@@ -57,6 +57,9 @@ viewOutput command =
 getOutput : String -> Html Msg
 getOutput command =
     case command of
+        "" ->
+            text ""
+
         _ ->
             div [] [ text ("ash: command not found: " ++ command) ]
 
