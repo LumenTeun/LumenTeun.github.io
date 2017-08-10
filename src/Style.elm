@@ -7,7 +7,6 @@ import Css.Namespace
 
 type CssClasses
     = Desktop
-    | Terminal
     | Window
     | WindowTop
     | WindowCloseButton
@@ -86,15 +85,5 @@ css =
                 , borderTop (px 0)
                 , flexGrow (num 1)
                 , borderRadius4 (px 0) (px 0) (px 3) (px 3)
-                ]
-            , class Terminal
-                [ backgroundColor bgColor
-                , flexDirection column
-                , displayFlex
-                , maxWidth (rem 64)
-                , flexGrow (int 1)
-                , padding (rem 2)
-                , margin2 (rem 4) auto
-                , border3 (px 1) solid (hex "a7d7f9")
                 ]
             ]

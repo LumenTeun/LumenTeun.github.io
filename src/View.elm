@@ -7,6 +7,7 @@ import Html.CssHelpers
 import Model exposing (Model)
 import Update exposing (Msg(..))
 import Style
+import Terminal.View exposing (terminal)
 
 
 { class } =
@@ -15,12 +16,10 @@ import Style
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ div
-            [ class [ Style.Desktop ] ]
-            [ window []
-                [ text "foobar"
-                ]
+    div
+        [ class [ Style.Desktop ] ]
+        [ window []
+            [ terminal model
             ]
         ]
 
