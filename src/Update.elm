@@ -15,6 +15,7 @@ type Msg
     | FocusInput
     | FocusInputResult (Result Dom.Error ())
     | SetInput String
+    | RunCommand
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -32,6 +33,14 @@ update msg model =
         SetInput text ->
             ( { model
                 | input = text
+              }
+            , Cmd.none
+            )
+
+        RunCommand ->
+            ( { model
+                | input = ""
+                , commandHistory = model.input :: model.commandHistory
               }
             , Cmd.none
             )

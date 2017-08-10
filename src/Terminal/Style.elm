@@ -8,9 +8,10 @@ import Css.Namespace
 type CssClasses
     = Terminal
     | Input
-    | InputPrompt
+    | Prompt
     | InputInput
     | Output
+    | OutputLine
 
 
 namespace =
@@ -41,13 +42,17 @@ css =
                 [ displayFlex
                 , alignItems center
                 ]
-            , class InputPrompt
+            , class OutputLine
+                [ displayFlex
+                ]
+            , class Prompt
                 [ displayFlex
                 , margin2 (em 0) (em 0.2)
                 ]
             , class InputInput
                 [ flexGrow (num 1)
                 , backgroundColor transparent
+                , padding (em 0)
                 , border (em 0)
                 , color inherit
                 , fontFamily inherit

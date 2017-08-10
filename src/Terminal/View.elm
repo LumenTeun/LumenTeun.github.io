@@ -3,6 +3,7 @@ module Terminal.View exposing (terminal)
 import Html exposing (Html, input, div, text)
 import Html.Attributes exposing (value, id)
 import Html.Events exposing (onInput, onClick)
+import Html.Events.Extra exposing (onEnter)
 import Html.CssHelpers
 import Model exposing (Model)
 import Update exposing (Msg(..))
@@ -20,12 +21,16 @@ terminal model =
         [ class [ Style.Terminal ], onClick FocusInput ]
         [ div
             [ class [ Style.Output ] ]
-            []
+            (model.commandHistory
+                |> List.reverse
+                |> List.map getOutput
+            )
         , div
             [ class [ Style.Input ] ]
-            [ div [ class [ Style.InputPrompt ] ] [ text "λ" ]
+            [ prompt
             , input
                 [ onInput SetInput
+                , onEnter RunCommand
                 , value model.input
                 , class [ Style.InputInput ]
                 , id inputId
@@ -33,3 +38,18 @@ terminal model =
                 []
             ]
         ]
+
+
+getOutput : String -> Html Msg
+getOutput command =
+    div [ class [ Style.OutputLine ] ]
+        [ prompt
+        , text command
+        ]
+
+
+prompt : Html Msg
+prompt =
+    div
+        [ class [ Style.Prompt ] ]
+        [ text "λ" ]
