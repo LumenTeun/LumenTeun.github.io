@@ -39,6 +39,7 @@ css =
                 , fontFamily monospace
                 , height (em 20)
                 , overflowY auto
+                , padding2 (em 0) (em 0.3)
                 ]
             , class Input
                 [ displayFlex
@@ -49,7 +50,7 @@ css =
                 ]
             , class Prompt
                 [ displayFlex
-                , margin2 (em 0) (em 0.2)
+                , marginRight (ch 1)
                 ]
             , class InputInput
                 [ flexGrow (num 1)
