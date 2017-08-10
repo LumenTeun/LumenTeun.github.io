@@ -14,6 +14,7 @@ type Msg
     = NoOp
     | FocusInput
     | FocusInputResult (Result Dom.Error ())
+    | SetInput String
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -27,6 +28,13 @@ update msg model =
 
         FocusInputResult result ->
             update NoOp model
+
+        SetInput text ->
+            ( { model
+                | input = text
+              }
+            , Cmd.none
+            )
 
         NoOp ->
             ( model, Cmd.none )

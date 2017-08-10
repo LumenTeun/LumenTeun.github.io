@@ -1,8 +1,8 @@
 module Terminal.View exposing (terminal)
 
-import Html exposing (Html, label, input, span, div, text, a)
-import Html.Attributes exposing (checked, title, href, type_, id)
-import Html.Events exposing (onMouseEnter, onMouseLeave, onClick)
+import Html exposing (Html, input, div, text)
+import Html.Attributes exposing (value, id)
+import Html.Events exposing (onInput, onClick)
 import Html.CssHelpers
 import Model exposing (Model)
 import Update exposing (Msg(..))
@@ -24,6 +24,12 @@ terminal model =
         , div
             [ class [ Style.Input ] ]
             [ div [ class [ Style.InputPrompt ] ] [ text "λ" ]
-            , input [ class [ Style.InputInput ], id inputId ] []
+            , input
+                [ onInput SetInput
+                , value model.input
+                , class [ Style.InputInput ]
+                , id inputId
+                ]
+                []
             ]
         ]
