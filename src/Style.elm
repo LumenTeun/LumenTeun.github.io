@@ -57,6 +57,7 @@ css =
                 , width (vw 100)
                 , justifyContent center
                 , alignItems center
+                , backgroundColor (hex "7070aa")
                 ]
             , class Window
                 [ displayFlex
