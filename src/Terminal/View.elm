@@ -8,7 +8,7 @@ import Html.CssHelpers
 import Model exposing (Model)
 import Update exposing (Msg(..))
 import Terminal.Style as Style
-import Constants exposing (inputId)
+import Constants exposing (inputId, terminalId)
 
 
 { class } =
@@ -18,7 +18,10 @@ import Constants exposing (inputId)
 terminal : Model -> Html Msg
 terminal model =
     div
-        [ class [ Style.Terminal ], onClick FocusInput ]
+        [ class [ Style.Terminal ]
+        , onClick FocusInput
+        , id terminalId
+        ]
         [ div
             [ class [ Style.Output ] ]
             (model.commandHistory

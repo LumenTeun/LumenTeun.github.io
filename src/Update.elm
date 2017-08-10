@@ -5,15 +5,16 @@ module Update
         )
 
 import Model exposing (Model)
-import Constants exposing (inputId)
+import Constants exposing (inputId, terminalId)
 import Dom
+import Dom.Scroll
 import Task
 
 
 type Msg
     = NoOp
     | FocusInput
-    | FocusInputResult (Result Dom.Error ())
+    | TaskResult (Result Dom.Error ())
     | SetInput String
     | RunCommand
 
@@ -23,11 +24,12 @@ update msg model =
     case msg of
         FocusInput ->
             ( model
-            , Dom.focus inputId
-                |> Task.attempt FocusInputResult
+            , inputId
+                |> Dom.focus
+                |> Task.attempt TaskResult
             )
 
-        FocusInputResult result ->
+        TaskResult result ->
             update NoOp model
 
         SetInput text ->
@@ -42,7 +44,9 @@ update msg model =
                 | input = ""
                 , commandHistory = model.input :: model.commandHistory
               }
-            , Cmd.none
+            , terminalId
+                |> Dom.Scroll.toBottom
+                |> Task.attempt TaskResult
             )
 
         NoOp ->

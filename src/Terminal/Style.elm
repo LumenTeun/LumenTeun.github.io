@@ -37,6 +37,8 @@ css =
                 , backgroundColor bgColor
                 , color fgColor
                 , fontFamily monospace
+                , height (em 20)
+                , overflowY auto
                 ]
             , class Input
                 [ displayFlex
