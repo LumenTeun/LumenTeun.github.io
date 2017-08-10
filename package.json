@@ -1,0 +1,16 @@
+{
+  "name": "ahstro.github.io",
+  "version": "3.0.0",
+  "repository": "git@github.com:ahstro/ahstro.github.io.git",
+  "author": "Anton Strömkvist <hi@ahst.ro>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "chokidar-cli": "^1.2.0",
+    "elm-css": "^0.6.0"
+  },
+  "scripts": {
+    "build": "elm make src/Main.elm --output docs/index.js && elm-css src/Stylesheets.elm --output docs/ ; exit 0",
+    "watch": "chokidar '**/*.elm' -c 'yarn build'"
+  }
+}
