@@ -26,7 +26,7 @@ terminal model =
             [ class [ Style.Output ] ]
             (model.commandHistory
                 |> List.reverse
-                |> List.map getOutput
+                |> List.map viewOutput
             )
         , div
             [ class [ Style.Input ] ]
@@ -43,12 +43,22 @@ terminal model =
         ]
 
 
+viewOutput : String -> Html Msg
+viewOutput command =
+    div []
+        [ div [ class [ Style.OutputLine ] ]
+            [ prompt
+            , text command
+            ]
+        , getOutput command
+        ]
+
+
 getOutput : String -> Html Msg
 getOutput command =
-    div [ class [ Style.OutputLine ] ]
-        [ prompt
-        , text command
-        ]
+    case command of
+        _ ->
+            div [] [ text ("ash: command not found: " ++ command) ]
 
 
 prompt : Html Msg
