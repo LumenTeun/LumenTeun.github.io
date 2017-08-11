@@ -63,7 +63,7 @@ getOutput command =
             text ""
 
         _ ->
-            div [] [ text ("ash: command not found: " ++ command) ]
+            text <| "ash: command not found: " ++ command
 
 
 prompt : Html Msg
