@@ -59,6 +59,9 @@ viewOutput command =
 getOutput : String -> Html Msg
 getOutput command =
     case command of
+        "hello" ->
+            text "hi :)"
+
         "" ->
             text ""
 
