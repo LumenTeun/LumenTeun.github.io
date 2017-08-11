@@ -37,7 +37,6 @@ css =
                 , backgroundColor bgColor
                 , color fgColor
                 , fontFamily monospace
-                , height (em 20)
                 , overflowY auto
                 , padding2 (em 0) (em 0.3)
                 ]

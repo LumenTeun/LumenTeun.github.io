@@ -62,8 +62,8 @@ css =
             , class Window
                 [ displayFlex
                 , flexDirection column
-                , minHeight (rem 20)
-                , minWidth (rem 30)
+                , height (rem 20)
+                , width (rem 30)
                 ]
             , class WindowTop
                 [ displayFlex
@@ -86,5 +86,6 @@ css =
                 , borderTop (px 0)
                 , flexGrow (num 1)
                 , borderRadius4 (px 0) (px 0) (px 3) (px 3)
+                , overflowY auto
                 ]
             ]
