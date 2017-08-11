@@ -22,6 +22,9 @@ getOutput command =
                     ( "", "" )
     in
         case cmd of
+            "about" ->
+                getAboutOutput tail
+
             "echo" ->
                 [ tail ]
 
@@ -92,3 +95,13 @@ getKeyBinding key =
 splitAtFirstWhitespace : String -> List String
 splitAtFirstWhitespace =
     Regex.split (AtMost 1) (regex "\\s+")
+
+
+getAboutOutput : String -> List String
+getAboutOutput args =
+    case args of
+        "ahstro" ->
+            [ "I'm ahstro or Anton Strömkvist. I like coding, psychedelics, rock climbing, and loads of other stuff. I also made this website. Nice meeting you!" ]
+
+        _ ->
+            [ "What do you want to know stuff about?", "- ahstro" ]
