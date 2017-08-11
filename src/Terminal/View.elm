@@ -99,10 +99,16 @@ getKeyBinding : String -> Msg
 getKeyBinding key =
     case key of
         "l" ->
-            ClearTerminal
+            ClearTerminalOutput
 
         "L" ->
-            ClearTerminal
+            ClearTerminalOutput
+
+        "u" ->
+            ClearTerminalInput
+
+        "U" ->
+            ClearTerminalInput
 
         _ ->
             NoOp
