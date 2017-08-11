@@ -10,6 +10,7 @@ import Model exposing (Model)
 import Update exposing (Msg(..))
 import Terminal.Style as Style
 import Constants exposing (terminalInputId, terminalId)
+import Regex exposing (regex, HowMany(AtMost))
 
 
 { class } =
@@ -58,15 +59,30 @@ viewOutput command =
 
 getOutput : String -> Html Msg
 getOutput command =
-    case command of
-        "hello" ->
-            text "hi :)"
+    let
+        ( cmd, tail ) =
+            case splitAtFirstWhitespace command of
+                cmd :: tail :: _ ->
+                    ( cmd, tail )
 
-        "" ->
-            text ""
+                cmd :: _ ->
+                    ( cmd, "" )
 
-        _ ->
-            text <| "ash: command not found: " ++ command
+                _ ->
+                    ( "", "" )
+    in
+        case cmd of
+            "echo" ->
+                text tail
+
+            "hello" ->
+                text "hi :)"
+
+            "" ->
+                text ""
+
+            _ ->
+                text <| "ash: command not found: " ++ command
 
 
 prompt : Html Msg
@@ -128,3 +144,8 @@ getKeyBinding key =
 
         _ ->
             NoOp
+
+
+splitAtFirstWhitespace : String -> List String
+splitAtFirstWhitespace =
+    Regex.split (AtMost 1) (regex "\\s+")
