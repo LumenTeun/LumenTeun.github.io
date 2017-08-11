@@ -107,6 +107,12 @@ getCtrlKeyBinding key =
         "u" ->
             ClearTerminalInput
 
+        "p" ->
+            ScrollTerminalInputBack
+
+        "n" ->
+            ScrollTerminalInputForward
+
         _ ->
             NoOp
 
@@ -114,5 +120,11 @@ getCtrlKeyBinding key =
 getKeyBinding : String -> Msg
 getKeyBinding key =
     case (String.toLower key) of
+        "arrowup" ->
+            ScrollTerminalInputBack
+
+        "arrowdown" ->
+            ScrollTerminalInputForward
+
         _ ->
             NoOp

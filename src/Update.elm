@@ -9,6 +9,7 @@ import Constants exposing (terminalInputId, terminalId)
 import Dom
 import Dom.Scroll
 import Task
+import Array.Hamt as Array
 
 
 type Msg
@@ -19,6 +20,8 @@ type Msg
     | RunCommand
     | ClearTerminalOutput
     | ClearTerminalInput
+    | ScrollTerminalInputBack
+    | ScrollTerminalInputForward
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -43,15 +46,64 @@ update msg model =
         ClearTerminalInput ->
             ( { model | terminalInput = "" }, Cmd.none )
 
+        ScrollTerminalInputBack ->
+            let
+                nextCommandHistoryIndex =
+                    model.commandHistoryIndex - 1
+
+                maybeNextTerminalInput =
+                    Array.get nextCommandHistoryIndex model.commandHistory
+            in
+                case maybeNextTerminalInput of
+                    Just nextTerminalInput ->
+                        ( { model
+                            | commandHistoryIndex = nextCommandHistoryIndex
+                            , terminalInput = nextTerminalInput
+                          }
+                        , Cmd.none
+                        )
+
+                    Nothing ->
+                        update NoOp model
+
+        ScrollTerminalInputForward ->
+            let
+                nextCommandHistoryIndex =
+                    model.commandHistoryIndex + 1
+
+                maybeNextTerminalInput =
+                    Array.get nextCommandHistoryIndex model.commandHistory
+            in
+                case maybeNextTerminalInput of
+                    Just nextTerminalInput ->
+                        ( { model
+                            | commandHistoryIndex = nextCommandHistoryIndex
+                            , terminalInput = nextTerminalInput
+                          }
+                        , Cmd.none
+                        )
+
+                    Nothing ->
+                        ( { model
+                            | commandHistoryIndex = Array.length model.commandHistory
+                            , terminalInput = ""
+                          }
+                        , Cmd.none
+                        )
+
         RunCommand ->
             let
                 command =
                     model.terminalInput
 
+                nextCommandHistory =
+                    Array.push command model.commandHistory
+
                 nextModelBase =
                     { model
                         | terminalInput = ""
-                        , commandHistory = command :: model.commandHistory
+                        , commandHistory = nextCommandHistory
+                        , commandHistoryIndex = Array.length nextCommandHistory
                     }
 
                 scrollToBottom =

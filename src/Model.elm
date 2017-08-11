@@ -4,9 +4,12 @@ module Model
         , init
         )
 
+import Array.Hamt as Array exposing (Array)
+
 
 type alias Model =
-    { commandHistory : List String
+    { commandHistory : Array String
+    , commandHistoryIndex : Int
     , terminalOutput : List String
     , terminalInput : String
     }
@@ -14,7 +17,8 @@ type alias Model =
 
 init : ( Model, Cmd msg )
 init =
-    ( { commandHistory = []
+    ( { commandHistory = Array.empty
+      , commandHistoryIndex = -1
       , terminalOutput = []
       , terminalInput = ""
       }
