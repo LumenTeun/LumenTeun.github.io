@@ -47,13 +47,15 @@ terminal model =
 
 viewOutput : String -> Html Msg
 viewOutput command =
-    div []
-        [ div [ class [ Style.OutputLine ] ]
+    div [] <|
+        div [ class [ Style.OutputLine ] ]
             [ prompt
             , text command
             ]
-        , text <| getOutput command
-        ]
+            :: (command
+                    |> getOutput
+                    |> List.map (\output -> div [] [ text output ])
+               )
 
 
 prompt : Html Msg

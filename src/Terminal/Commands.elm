@@ -7,7 +7,7 @@ import Regex exposing (regex, HowMany(AtMost))
 import Update exposing (Msg(..))
 
 
-getOutput : String -> String
+getOutput : String -> List String
 getOutput command =
     let
         ( cmd, tail ) =
@@ -23,16 +23,16 @@ getOutput command =
     in
         case cmd of
             "echo" ->
-                tail
+                [ tail ]
 
             "hello" ->
-                "hi :)"
+                [ "hi :)" ]
 
             "" ->
-                ""
+                [ "" ]
 
             _ ->
-                "ash: command not found: " ++ command
+                [ "ash: command not found: " ++ command ]
 
 
 type alias KeyCombination =
