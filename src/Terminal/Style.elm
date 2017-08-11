@@ -1,4 +1,4 @@
-module Terminal.Style exposing (..)
+module Terminal.Style exposing (namespace, css, CssClasses(..))
 
 import Css exposing (..)
 import Css.Elements exposing (html, body, a)

@@ -1,4 +1,4 @@
-module Style exposing (..)
+module Desktop.Style exposing (namespace, css, CssClasses(..))
 
 import Css exposing (..)
 import Css.Elements exposing (html, body, a)
@@ -14,7 +14,7 @@ type CssClasses
 
 
 namespace =
-    "ahstro"
+    "desktop"
 
 
 webkitScrollbar =
