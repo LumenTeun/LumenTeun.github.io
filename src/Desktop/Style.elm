@@ -62,8 +62,8 @@ css =
             , class Window
                 [ displayFlex
                 , flexDirection column
-                , height (rem 20)
-                , width (rem 30)
+                , minHeight (rem 20)
+                , minWidth (rem 30)
                 ]
             , class WindowTop
                 [ displayFlex
