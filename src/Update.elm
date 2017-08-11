@@ -47,49 +47,10 @@ update msg model =
             ( { model | terminalInput = "" }, Cmd.none )
 
         ScrollTerminalInputBack ->
-            let
-                nextCommandHistoryIndex =
-                    model.commandHistoryIndex - 1
-
-                maybeNextTerminalInput =
-                    Array.get nextCommandHistoryIndex model.commandHistory
-            in
-                case maybeNextTerminalInput of
-                    Just nextTerminalInput ->
-                        ( { model
-                            | commandHistoryIndex = nextCommandHistoryIndex
-                            , terminalInput = nextTerminalInput
-                          }
-                        , Cmd.none
-                        )
-
-                    Nothing ->
-                        update NoOp model
+            scrollTerminalInput Backward model
 
         ScrollTerminalInputForward ->
-            let
-                nextCommandHistoryIndex =
-                    model.commandHistoryIndex + 1
-
-                maybeNextTerminalInput =
-                    Array.get nextCommandHistoryIndex model.commandHistory
-            in
-                case maybeNextTerminalInput of
-                    Just nextTerminalInput ->
-                        ( { model
-                            | commandHistoryIndex = nextCommandHistoryIndex
-                            , terminalInput = nextTerminalInput
-                          }
-                        , Cmd.none
-                        )
-
-                    Nothing ->
-                        ( { model
-                            | commandHistoryIndex = Array.length model.commandHistory
-                            , terminalInput = ""
-                          }
-                        , Cmd.none
-                        )
+            scrollTerminalInput Forward model
 
         RunCommand ->
             let
@@ -123,3 +84,45 @@ update msg model =
 
         NoOp ->
             ( model, Cmd.none )
+
+
+type ScrollDirection
+    = Forward
+    | Backward
+
+
+scrollTerminalInput : ScrollDirection -> Model -> ( Model, Cmd Msg )
+scrollTerminalInput scrollDirection model =
+    let
+        nextCommandHistoryIndex =
+            case scrollDirection of
+                Backward ->
+                    model.commandHistoryIndex - 1
+
+                Forward ->
+                    model.commandHistoryIndex + 1
+
+        maybeNextTerminalInput =
+            Array.get nextCommandHistoryIndex model.commandHistory
+    in
+        case maybeNextTerminalInput of
+            Just nextTerminalInput ->
+                ( { model
+                    | commandHistoryIndex = nextCommandHistoryIndex
+                    , terminalInput = nextTerminalInput
+                  }
+                , Cmd.none
+                )
+
+            Nothing ->
+                case scrollDirection of
+                    Backward ->
+                        update NoOp model
+
+                    Forward ->
+                        ( { model
+                            | commandHistoryIndex = Array.length model.commandHistory
+                            , terminalInput = ""
+                          }
+                        , Cmd.none
+                        )
