@@ -5,7 +5,7 @@ module Update
         )
 
 import Model exposing (Model)
-import Constants exposing (inputId, terminalId)
+import Constants exposing (terminalInputId, terminalId)
 import Dom
 import Dom.Scroll
 import Task
@@ -13,9 +13,9 @@ import Task
 
 type Msg
     = NoOp
-    | FocusInput
+    | FocusTerminalInput
     | TaskResult (Result Dom.Error ())
-    | SetInput String
+    | SetTerminalInput String
     | RunCommand
     | ClearTerminalOutput
     | ClearTerminalInput
@@ -24,9 +24,9 @@ type Msg
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        FocusInput ->
+        FocusTerminalInput ->
             ( model
-            , inputId
+            , terminalInputId
                 |> Dom.focus
                 |> Task.attempt TaskResult
             )
@@ -34,23 +34,23 @@ update msg model =
         TaskResult result ->
             update NoOp model
 
-        SetInput text ->
-            ( { model | input = text }, Cmd.none )
+        SetTerminalInput text ->
+            ( { model | terminalInput = text }, Cmd.none )
 
         ClearTerminalOutput ->
-            ( { model | renderedCommands = [] }, Cmd.none )
+            ( { model | terminalOutput = [] }, Cmd.none )
 
         ClearTerminalInput ->
-            ( { model | input = "" }, Cmd.none )
+            ( { model | terminalInput = "" }, Cmd.none )
 
         RunCommand ->
             let
                 command =
-                    model.input
+                    model.terminalInput
 
                 nextModelBase =
                     { model
-                        | input = ""
+                        | terminalInput = ""
                         , commandHistory = command :: model.commandHistory
                     }
 
@@ -65,7 +65,7 @@ update msg model =
 
                     _ ->
                         { nextModelBase
-                            | renderedCommands = command :: model.renderedCommands
+                            | terminalOutput = command :: model.terminalOutput
                         }
                             ! [ scrollToBottom ]
 

@@ -1,8 +1,8 @@
-module Constants exposing (inputId, terminalId)
+module Constants exposing (terminalInputId, terminalId)
 
 
-inputId : String
-inputId =
+terminalInputId : String
+terminalInputId =
     "terminal-input"
 
 

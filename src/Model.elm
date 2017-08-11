@@ -7,16 +7,16 @@ module Model
 
 type alias Model =
     { commandHistory : List String
-    , renderedCommands : List String
-    , input : String
+    , terminalOutput : List String
+    , terminalInput : String
     }
 
 
 init : ( Model, Cmd msg )
 init =
     ( { commandHistory = []
-      , renderedCommands = []
-      , input = ""
+      , terminalOutput = []
+      , terminalInput = ""
       }
     , Cmd.none
     )

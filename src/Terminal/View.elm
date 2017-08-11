@@ -9,7 +9,7 @@ import Json.Decode as Json
 import Model exposing (Model)
 import Update exposing (Msg(..))
 import Terminal.Style as Style
-import Constants exposing (inputId, terminalId)
+import Constants exposing (terminalInputId, terminalId)
 
 
 { class } =
@@ -20,13 +20,13 @@ terminal : Model -> Html Msg
 terminal model =
     div
         [ class [ Style.Terminal ]
-        , onClick FocusInput
+        , onClick FocusTerminalInput
         , handleKeyCombination
         , id terminalId
         ]
         [ div
             [ class [ Style.Output ] ]
-            (model.renderedCommands
+            (model.terminalOutput
                 |> List.reverse
                 |> List.map viewOutput
             )
@@ -34,11 +34,11 @@ terminal model =
             [ class [ Style.Input ] ]
             [ prompt
             , input
-                [ onInput SetInput
+                [ onInput SetTerminalInput
                 , onEnter RunCommand
-                , value model.input
+                , value model.terminalInput
                 , class [ Style.InputInput ]
-                , id inputId
+                , id terminalInputId
                 ]
                 []
             ]
