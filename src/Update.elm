@@ -40,14 +40,26 @@ update msg model =
             )
 
         RunCommand ->
-            ( { model
-                | input = ""
-                , commandHistory = model.input :: model.commandHistory
-              }
-            , terminalId
-                |> Dom.Scroll.toBottom
-                |> Task.attempt TaskResult
-            )
+            let
+                command =
+                    model.input
+
+                nextModelBase =
+                    { model
+                        | input = ""
+                        , commandHistory = command :: model.commandHistory
+                    }
+
+                scrollToBottom =
+                    terminalId
+                        |> Dom.Scroll.toBottom
+                        |> Task.attempt TaskResult
+            in
+                case command of
+                    _ ->
+                        { nextModelBase
+                        }
+                            ! [ scrollToBottom ]
 
         NoOp ->
             ( model, Cmd.none )
