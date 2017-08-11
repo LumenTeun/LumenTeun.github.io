@@ -58,6 +58,7 @@ update msg model =
                 case command of
                     _ ->
                         { nextModelBase
+                            | renderedCommands = command :: model.renderedCommands
                         }
                             ! [ scrollToBottom ]
 

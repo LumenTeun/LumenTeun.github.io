@@ -7,6 +7,7 @@ module Model
 
 type alias Model =
     { commandHistory : List String
+    , renderedCommands : List String
     , input : String
     }
 
@@ -14,6 +15,7 @@ type alias Model =
 init : ( Model, Cmd msg )
 init =
     ( { commandHistory = []
+      , renderedCommands = []
       , input = ""
       }
     , Cmd.none

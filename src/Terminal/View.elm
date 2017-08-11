@@ -24,7 +24,7 @@ terminal model =
         ]
         [ div
             [ class [ Style.Output ] ]
-            (model.commandHistory
+            (model.renderedCommands
                 |> List.reverse
                 |> List.map viewOutput
             )
