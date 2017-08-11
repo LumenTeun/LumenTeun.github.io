@@ -91,15 +91,15 @@ handleKeyCombination =
         |> Json.andThen
             (\{ ctrlKey, key } ->
                 if ctrlKey then
-                    Json.succeed <| getKeyBinding key
+                    Json.succeed <| getCtrlKeyBinding key
                 else
-                    Json.fail "No ctrl"
+                    Json.succeed <| getKeyBinding key
             )
         |> on "keydown"
 
 
-getKeyBinding : String -> Msg
-getKeyBinding key =
+getCtrlKeyBinding : String -> Msg
+getCtrlKeyBinding key =
     case (String.toLower key) of
         "l" ->
             ClearTerminalOutput
@@ -107,5 +107,12 @@ getKeyBinding key =
         "u" ->
             ClearTerminalInput
 
+        _ ->
+            NoOp
+
+
+getKeyBinding : String -> Msg
+getKeyBinding key =
+    case (String.toLower key) of
         _ ->
             NoOp
