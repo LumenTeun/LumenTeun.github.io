@@ -17,6 +17,7 @@ type Msg
     | TaskResult (Result Dom.Error ())
     | SetInput String
     | RunCommand
+    | ClearTerminal
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -33,11 +34,10 @@ update msg model =
             update NoOp model
 
         SetInput text ->
-            ( { model
-                | input = text
-              }
-            , Cmd.none
-            )
+            ( { model | input = text }, Cmd.none )
+
+        ClearTerminal ->
+            ( { model | renderedCommands = [] }, Cmd.none )
 
         RunCommand ->
             let
@@ -56,6 +56,9 @@ update msg model =
                         |> Task.attempt TaskResult
             in
                 case command of
+                    "clear" ->
+                        update ClearTerminal nextModelBase
+
                     _ ->
                         { nextModelBase
                             | renderedCommands = command :: model.renderedCommands
