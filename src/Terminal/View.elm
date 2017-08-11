@@ -100,17 +100,11 @@ handleKeyCombination =
 
 getKeyBinding : String -> Msg
 getKeyBinding key =
-    case key of
+    case (String.toLower key) of
         "l" ->
             ClearTerminalOutput
 
-        "L" ->
-            ClearTerminalOutput
-
         "u" ->
-            ClearTerminalInput
-
-        "U" ->
             ClearTerminalInput
 
         _ ->
