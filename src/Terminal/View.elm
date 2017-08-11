@@ -98,5 +98,11 @@ handleKeyCombination =
 getKeyBinding : String -> Msg
 getKeyBinding key =
     case key of
+        "l" ->
+            ClearTerminal
+
+        "L" ->
+            ClearTerminal
+
         _ ->
             NoOp
