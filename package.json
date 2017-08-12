@@ -7,10 +7,13 @@
   "dependencies": {},
   "devDependencies": {
     "chokidar-cli": "^1.2.0",
-    "elm-css": "^0.6.0"
+    "csso-cli": "^1.0.0",
+    "elm-css": "^0.6.0",
+    "uglify-js": "^3.0.27"
   },
   "scripts": {
-    "build": "elm make src/Main.elm --output docs/index.js && elm-css src/Stylesheets.elm --output docs/ ; exit 0",
-    "watch": "chokidar '**/*.elm' -c 'yarn build'"
+    "build:dev": "elm make src/Main.elm --output docs/index.js && elm-css src/Stylesheets.elm --output docs/ ; exit 0",
+    "build:prod": "yarn build:dev && uglifyjs --mangle --compress --output docs/index.js -- docs/index.js && csso -i docs/index.css -o docs/index.css",
+    "watch": "chokidar '**/*.elm' -c 'yarn build:dev'"
   }
 }
