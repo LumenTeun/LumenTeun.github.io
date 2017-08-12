@@ -39,7 +39,7 @@ css =
                 , color fgColor
                 , fontFamily monospace
                 , overflowY auto
-                , padding2 (em 0) (em 0.3)
+                , padding2 (rem 0) (rem 0.3)
                 , whiteSpace preWrap
                 , descendants
                     [ a
@@ -64,8 +64,8 @@ css =
             , class InputInput
                 [ flexGrow (num 1)
                 , backgroundColor transparent
-                , padding (em 0)
-                , border (em 0)
+                , padding (rem 0)
+                , border (rem 0)
                 , color inherit
                 , fontFamily inherit
                 ]

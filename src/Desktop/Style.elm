@@ -35,6 +35,12 @@ css =
 
         windowBorderColor =
             (hex "bbc8dd")
+
+        windowBorderRadius =
+            (rem 0.2)
+
+        windowBorderWidth =
+            (rem 0.2)
     in
         (stylesheet << Css.Namespace.namespace namespace)
             [ everything
@@ -71,22 +77,22 @@ css =
                 , backgroundColor windowBorderColor
                 , justifyContent spaceBetween
                 , alignItems center
-                , border3 (px 2) solid windowBorderColor
-                , borderRadius4 (px 3) (px 3) (px 0) (px 0)
-                , padding2 (em 0) (em 0.2)
+                , border3 windowBorderWidth solid windowBorderColor
+                , borderRadius4 windowBorderRadius windowBorderRadius (px 0) (px 0)
+                , padding2 (rem 0) (rem 0.2)
                 ]
             , class WindowCloseButton
                 [ borderRadius (pct 50)
                 , backgroundColor (hex "ff0000")
-                , height (em 0.5)
-                , width (em 0.5)
+                , height (rem 0.5)
+                , width (rem 0.5)
                 ]
             , class WindowChildren
                 [ displayFlex
-                , border3 (px 2) solid windowBorderColor
+                , border3 windowBorderWidth solid windowBorderColor
                 , borderTop (px 0)
                 , flexGrow (num 1)
-                , borderRadius4 (px 0) (px 0) (px 3) (px 3)
+                , borderRadius4 (px 0) (px 0) windowBorderRadius windowBorderRadius
                 , overflowY auto
                 ]
             ]
