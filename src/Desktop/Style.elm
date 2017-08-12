@@ -49,7 +49,7 @@ css =
                 , after [ boxSizing borderBox ]
                 ]
             , html
-                [ fontSize (px 14) ]
+                [ fontSize (px 16) ]
             , body
                 [ backgroundColor (hex "f6f6f6")
                 , displayFlex
