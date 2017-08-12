@@ -1,7 +1,7 @@
 module Terminal.View exposing (terminal)
 
 import Html exposing (Html, input, div, text)
-import Html.Attributes exposing (value, id)
+import Html.Attributes exposing (value, id, attribute)
 import Html.Events exposing (onInput, onClick)
 import Html.Events.Extra exposing (onEnter)
 import Html.CssHelpers
@@ -39,6 +39,7 @@ terminal model =
                 , value model.terminalInput
                 , class [ Style.InputInput ]
                 , id terminalInputId
+                , attribute "aria-label" "terminal input"
                 ]
                 []
             ]

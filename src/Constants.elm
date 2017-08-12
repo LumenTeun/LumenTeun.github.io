@@ -15,7 +15,7 @@ terminalId =
 
 blue : Css.Color
 blue =
-    (hex "7070aa")
+    (hex "a5aad5")
 
 
 black : Css.Color
