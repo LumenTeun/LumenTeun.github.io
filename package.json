@@ -12,8 +12,8 @@
     "uglify-js": "^3.0.27"
   },
   "scripts": {
-    "build:dev": "elm make src/Main.elm --output docs/index.js && elm-css src/Stylesheets.elm --output docs/ ; exit 0",
-    "build:prod": "yarn build:dev && uglifyjs --mangle --compress --output docs/index.js -- docs/index.js && csso -i docs/index.css -o docs/index.css",
+    "build:dev": "elm make src/Main.elm --output build/index.js && elm-css src/Stylesheets.elm --output build/ ; exit 0",
+    "build:prod": "yarn build:dev && uglifyjs --mangle --compress --output build/index.js -- build/index.js && csso -i build/index.css -o build/index.css",
     "watch": "chokidar '**/*.elm' -c 'yarn build:dev'"
   }
 }
