@@ -153,10 +153,10 @@ getAboutOutput args =
         _ ->
             [ line [ text "usage: about [topic]" ]
             , line [ text "Topics:" ]
-            , line [ text "- ahstro" ]
-            , line [ text "- coding" ]
-            , line [ text "- psychedelics" ]
-            , line [ text "- contact" ]
+            , line [ text " ahstro" ]
+            , line [ text " coding" ]
+            , line [ text " psychedelics" ]
+            , line [ text " contact" ]
             ]
 
 
