@@ -3,7 +3,7 @@ module Terminal.Style exposing (namespace, css, CssClasses(..))
 import Css exposing (..)
 import Css.Elements exposing (html, body, a)
 import Css.Namespace
-import Constants exposing (blue)
+import Constants exposing (blue, black)
 
 
 type CssClasses
@@ -26,16 +26,13 @@ css =
 
         fgColor =
             (hex "d5d3a5")
-
-        bgColor =
-            (hex "18202c")
     in
         (stylesheet << Css.Namespace.namespace namespace)
             [ class Terminal
                 [ displayFlex
                 , flexDirection column
                 , flexGrow (num 1)
-                , backgroundColor bgColor
+                , backgroundColor black
                 , color fgColor
                 , fontFamily monospace
                 , overflowY auto

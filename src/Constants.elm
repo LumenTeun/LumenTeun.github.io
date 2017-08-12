@@ -1,4 +1,4 @@
-module Constants exposing (terminalInputId, terminalId, blue)
+module Constants exposing (..)
 
 import Css exposing (hex)
 
@@ -16,3 +16,8 @@ terminalId =
 blue : Css.Color
 blue =
     (hex "7070aa")
+
+
+black : Css.Color
+black =
+    (hex "18202c")
