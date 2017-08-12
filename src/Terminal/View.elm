@@ -52,10 +52,7 @@ viewOutput command =
             [ prompt
             , text command
             ]
-            :: (command
-                    |> getOutput
-                    |> List.map (\output -> div [] [ text output ])
-               )
+            :: getOutput command
 
 
 prompt : Html Msg

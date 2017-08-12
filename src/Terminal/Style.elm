@@ -3,6 +3,7 @@ module Terminal.Style exposing (namespace, css, CssClasses(..))
 import Css exposing (..)
 import Css.Elements exposing (html, body, a)
 import Css.Namespace
+import Constants exposing (blue)
 
 
 type CssClasses
@@ -40,6 +41,14 @@ css =
                 , overflowY auto
                 , padding2 (em 0) (em 0.3)
                 , whiteSpace preWrap
+                , descendants
+                    [ a
+                        [ color blue
+                        , hover
+                            [ textDecoration underline
+                            ]
+                        ]
+                    ]
                 ]
             , class Input
                 [ displayFlex
