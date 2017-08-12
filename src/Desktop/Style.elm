@@ -3,7 +3,7 @@ module Desktop.Style exposing (namespace, css, CssClasses(..))
 import Css exposing (..)
 import Css.Elements exposing (html, body, a)
 import Css.Namespace
-import Constants exposing (blue)
+import Constants exposing (blue, black)
 
 
 type CssClasses
@@ -76,10 +76,13 @@ css =
                 [ displayFlex
                 , backgroundColor windowBorderColor
                 , justifyContent spaceBetween
-                , alignItems center
+                , alignItems baseline
                 , border3 windowBorderWidth solid windowBorderColor
                 , borderRadius4 windowBorderRadius windowBorderRadius (px 0) (px 0)
                 , padding2 (rem 0) (rem 0.2)
+                , height (rem 1.3)
+                , fontSize (rem 0.9)
+                , color black
                 ]
             , class WindowCloseButton
                 [ borderRadius (pct 50)
