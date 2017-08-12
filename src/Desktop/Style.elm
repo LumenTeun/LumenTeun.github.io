@@ -3,6 +3,7 @@ module Desktop.Style exposing (namespace, css, CssClasses(..))
 import Css exposing (..)
 import Css.Elements exposing (html, body, a)
 import Css.Namespace
+import Constants exposing (blue)
 
 
 type CssClasses
@@ -57,7 +58,7 @@ css =
                 , width (vw 100)
                 , justifyContent center
                 , alignItems center
-                , backgroundColor (hex "7070aa")
+                , backgroundColor blue
                 ]
             , class Window
                 [ displayFlex
