@@ -142,6 +142,12 @@ getAboutOutput args =
                 [ text "gitlab: "
                 , gitlab "gitlab.com/ahstro"
                 ]
+            , line
+                [ text "   pgp: "
+                , link
+                    "https://pgp.mit.edu/pks/lookup?op=vindex&search=0x50A3573EFBFA9867"
+                    "0x50A3573EFBFA9867"
+                ]
             ]
 
         _ ->
