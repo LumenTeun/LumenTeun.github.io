@@ -64,7 +64,7 @@ css =
                 , width (vw 100)
                 , justifyContent center
                 , alignItems center
-                , backgroundColor blue
+                , backgroundImage <| url "/images/background.png"
                 ]
             , class Window
                 [ displayFlex
