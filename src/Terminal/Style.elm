@@ -65,5 +65,6 @@ css =
                 , border (rem 0)
                 , color inherit
                 , fontFamily inherit
+                , outlineStyle none
                 ]
             ]
