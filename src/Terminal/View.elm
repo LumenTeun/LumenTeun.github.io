@@ -62,4 +62,4 @@ prompt : Html Msg
 prompt =
     div
         [ class [ Style.Prompt ] ]
-        [ text "λ" ]
+        [ text "λ " ]

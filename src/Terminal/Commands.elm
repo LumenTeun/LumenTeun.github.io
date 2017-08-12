@@ -32,7 +32,7 @@ getOutput command =
                 [ "hi :)" ]
 
             "" ->
-                [ "" ]
+                []
 
             _ ->
                 [ "ash: command not found: " ++ command ]
