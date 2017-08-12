@@ -59,6 +59,7 @@ css =
                 ]
             , class Prompt
                 [ displayFlex
+                , color blue
                 ]
             , class InputInput
                 [ flexGrow (num 1)
