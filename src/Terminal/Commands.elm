@@ -145,7 +145,8 @@ getAboutOutput args =
             ]
 
         _ ->
-            [ line [ text "What do you want to know stuff about?" ]
+            [ line [ text "usage: about [topic]" ]
+            , line [ text "Topics:" ]
             , line [ text "- ahstro" ]
             , line [ text "- coding" ]
             , line [ text "- psychedelics" ]
