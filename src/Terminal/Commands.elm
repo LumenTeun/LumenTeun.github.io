@@ -26,6 +26,13 @@ getOutput command =
             "about" ->
                 getAboutOutput tail
 
+            "help" ->
+                [ line [ text "Here are some available commands:" ]
+                , line [ text "about" ]
+                , line [ text "echo" ]
+                , line [ text "clear" ]
+                ]
+
             "echo" ->
                 [ text tail ]
 
@@ -36,7 +43,9 @@ getOutput command =
                 []
 
             _ ->
-                [ text <| "ash: command not found: " ++ command ]
+                [ line [ text <| "ash: command not found: " ++ command ]
+                , line [ text "Try 'help' if you're lost" ]
+                ]
 
 
 type alias KeyCombination =
