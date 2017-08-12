@@ -1,7 +1,7 @@
 module Terminal.Style exposing (namespace, css, CssClasses(..))
 
 import Css exposing (..)
-import Css.Elements exposing (html, body, a)
+import Css.Elements exposing (a)
 import Css.Namespace
 import Constants exposing (blue, black)
 
