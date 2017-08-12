@@ -1,7 +1,12 @@
-module Style exposing (css)
+module Style exposing (css, CssIds(..))
 
 import Css exposing (..)
 import Css.Elements exposing (html, body, a)
+
+
+type CssIds
+    = Loading
+    | Main
 
 
 css =
@@ -21,5 +26,15 @@ css =
             ]
         , a
             [ textDecoration none
+            ]
+        , id Main
+            [ displayFlex
+            , justifyContent center
+            , alignItems center
+            , flexGrow (num 1)
+            ]
+        , id Loading
+            [ fontSize (Css.rem 2)
+            , fontFamily sansSerif
             ]
         ]
