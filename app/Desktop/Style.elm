@@ -44,6 +44,7 @@ css =
                 , flexDirection column
                 , height (rem 20)
                 , width (rem 30)
+                , boxShadow4 (rem 0.4) (rem 0.4) (rem 0.3) (hex "0008")
                 ]
             , class WindowTop
                 [ displayFlex
