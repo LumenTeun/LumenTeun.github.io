@@ -11,7 +11,7 @@ port files : CssFileStructure -> Cmd msg
 cssFiles : CssFileStructure
 cssFiles =
     Css.File.toFileStructure
-        [ ( "index.css"
+        [ ( "app.css"
           , Css.File.compile
                 [ Desktop.Style.css
                 , Terminal.Style.css

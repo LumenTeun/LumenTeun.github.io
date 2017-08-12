@@ -1,4 +1,4 @@
 images/src
 elm-stuff/
 node_modules/
-src/elm-package.json
+app/elm-package.json
