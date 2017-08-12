@@ -83,6 +83,7 @@ css =
                 , height (rem 1.3)
                 , fontSize (rem 0.9)
                 , color black
+                , fontFamily sansSerif
                 ]
             , class WindowCloseButton
                 [ borderRadius (pct 50)
