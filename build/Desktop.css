@@ -1,0 +1,45 @@
+.Desktop-desktop {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.Desktop-window {
+    display: flex;
+    flex-direction: column;
+    height: 20rem;
+    width: 30rem;
+    box-shadow: 0.4rem 0.4rem 0.3rem #0008;
+}
+
+.Desktop-windowChildren {
+    display: flex;
+    border: 0.2rem solid #bbc8dd;
+    border-top: 0px;
+    flex-grow: 1;
+    border-radius: 0px 0px 0.2rem 0.2rem;
+    overflow-y: auto;
+}
+
+.Desktop-windowCloseButton {
+    border-radius: 50%;
+    background-color: #ff0000;
+    height: 0.5rem;
+    width: 0.5rem;
+}
+
+.Desktop-windowTop {
+    display: flex;
+    background-color: #bbc8dd;
+    justify-content: space-between;
+    align-items: baseline;
+    border: 0.2rem solid #bbc8dd;
+    border-radius: 0.2rem 0.2rem 0px 0px;
+    padding: 0rem 0.2rem;
+    height: 1.3rem;
+    font-size: 0.9rem;
+    color: #18202c;
+    font-family: sans-serif;
+}

@@ -1,7 +1,5 @@
 module Constants exposing (..)
 
-import Css exposing (hex)
-
 
 terminalInputId : String
 terminalInputId =
@@ -11,13 +9,3 @@ terminalInputId =
 terminalId : String
 terminalId =
     "terminal-terminal"
-
-
-blue : Css.Color
-blue =
-    (hex "a5aad5")
-
-
-black : Css.Color
-black =
-    (hex "18202c")

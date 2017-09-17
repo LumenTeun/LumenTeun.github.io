@@ -1,5 +1,5 @@
 {
-  "name": "ahstro.github.io",
+  "name": "ahstro",
   "version": "3.0.0",
   "repository": "git@github.com:ahstro/ahstro.github.io.git",
   "author": "Anton Strömkvist <hi@ahst.ro>",
@@ -8,11 +8,11 @@
   "devDependencies": {
     "chokidar-cli": "^1.2.0",
     "csso-cli": "^1.1.0",
-    "elm-css": "^0.6.1",
+    "elm-css": "rtfeldman/elm-css#cli-revamp",
     "uglify-js": "^3.1.0"
   },
   "scripts": {
-    "build:dev": "elm make app/Main.elm --output build/app.js && elm-css app/Stylesheets.elm --output build/ ; exit 0",
+    "build:dev": "elm-css --output build/ && elm make app/Main.elm --output build/app.js ; exit 0",
     "build:prod": "yarn build:dev && uglifyjs --mangle --compress --output build/app.js -- build/app.js && csso -i build/app.css -o build/app.css",
     "watch": "chokidar '**/*.elm' -c 'yarn build:dev'"
   }

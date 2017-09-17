@@ -2,27 +2,23 @@ module Desktop.View exposing (desktop, window)
 
 import Html exposing (div, text)
 import Html.Attributes exposing (checked, title, href, type_)
-import Desktop.Style as Style
+import Desktop.Css as Css
 import Html.CssHelpers
-
-
-{ class } =
-    Html.CssHelpers.withNamespace Style.namespace
 
 
 desktop children =
     div
-        [ class [ Style.Desktop ] ]
+        [ Css.desktop ]
         children
 
 
 window name children =
-    div [ class [ Style.Window ] ]
-        [ div [ class [ Style.WindowTop ] ]
+    div [ Css.window ]
+        [ div [ Css.windowTop ]
             [ text name
-            , div [ class [ Style.WindowCloseButton ] ] []
+            , div [ Css.windowCloseButton ] []
             ]
         , div
-            [ class [ Style.WindowChildren ] ]
+            [ Css.windowChildren ]
             children
         ]

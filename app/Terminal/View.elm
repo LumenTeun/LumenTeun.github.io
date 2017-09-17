@@ -7,37 +7,33 @@ import Html.Events.Extra exposing (onEnter)
 import Html.CssHelpers
 import Model exposing (Model)
 import Update exposing (Msg(..))
-import Terminal.Style as Style
+import Terminal.Css as Css
 import Terminal.Commands exposing (getOutput, handleKeyCombination)
 import Constants exposing (terminalInputId, terminalId)
-
-
-{ class } =
-    Html.CssHelpers.withNamespace Style.namespace
 
 
 terminal : Model -> Html Msg
 terminal model =
     div
-        [ class [ Style.Terminal ]
+        [ Css.terminal
         , onClick FocusTerminalInput
         , handleKeyCombination
         , id terminalId
         ]
         [ div
-            [ class [ Style.Output ] ]
+            []
             (model.terminalOutput
                 |> List.reverse
                 |> List.map viewOutput
             )
         , div
-            [ class [ Style.Input ] ]
+            [ Css.input ]
             [ prompt
             , input
                 [ onInput SetTerminalInput
                 , onEnter RunCommand
                 , value model.terminalInput
-                , class [ Style.InputInput ]
+                , Css.inputInput
                 , id terminalInputId
                 , attribute "aria-label" "terminal input"
                 ]
@@ -49,7 +45,7 @@ terminal model =
 viewOutput : String -> Html Msg
 viewOutput command =
     div [] <|
-        div [ class [ Style.OutputLine ] ]
+        div [ Css.outputLine ]
             [ prompt
             , text command
             ]
@@ -59,5 +55,5 @@ viewOutput command =
 prompt : Html Msg
 prompt =
     div
-        [ class [ Style.Prompt ] ]
+        [ Css.prompt ]
         [ text "λ " ]
