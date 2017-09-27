@@ -2,3 +2,4 @@ images/src
 elm-stuff/
 node_modules/
 app/elm-package.json
+build/
