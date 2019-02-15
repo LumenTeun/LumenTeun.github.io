@@ -1,0 +1,28 @@
+body {
+  margin: 1em;
+  font-family: monospace;
+  font-size: 14px;
+  background-color: #f6f4f9;
+}
+
+main {
+  margin: 0 auto;
+  width: max-content;
+  max-width: 100%;
+}
+
+a,
+a:hover,
+a:active,
+a:visited {
+  color: #663de8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.small {
+  font-size: 0.7em;
+}
