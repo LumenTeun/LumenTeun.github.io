@@ -2,6 +2,7 @@ body {
   margin: 1em;
   font-family: monospace;
   font-size: 14px;
+  font-size: 4vmin;
   background-color: #f6f4f9;
 }
 
