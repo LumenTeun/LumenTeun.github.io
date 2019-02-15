@@ -6,8 +6,6 @@ body {
 }
 
 main {
-  margin: 0 auto;
-  width: max-content;
   max-width: 100%;
 }
 
