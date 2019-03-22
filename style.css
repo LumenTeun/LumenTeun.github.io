@@ -30,6 +30,7 @@ a:hover {
   top: 0;
   right: 1em;
   cursor: pointer;
+  height: 14vmin;
 }
 
 /**
