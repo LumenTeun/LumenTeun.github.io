@@ -3,7 +3,6 @@ body {
   font-family: monospace;
   font-size: 14px;
   font-size: 4vmin;
-  background-color: #f6f4f9;
 }
 
 main {
@@ -14,8 +13,8 @@ a,
 a:hover,
 a:active,
 a:visited {
-  color: #663de8;
   text-decoration: none;
+  font-weight: 700;
 }
 
 a:hover {
@@ -24,4 +23,64 @@ a:hover {
 
 .small {
   font-size: 0.7em;
+}
+
+/**
+ *themes
+ **/
+
+/* salmon */
+
+body.salmon {
+  background-color: #f3a2ad;
+  color: #00362b;
+}
+
+.salmon a,
+.salmon a:hover,
+.salmon a:active,
+.salmon a:visited {
+  color: #246d5f;
+}
+
+/* aubergine */
+
+body.aubergine {
+  background-color: #887caf;
+  color: #555500;
+}
+
+.aubergine a,
+.aubergine a:hover,
+.aubergine a:active,
+.aubergine a:visited {
+  color: #aaaa39;
+}
+
+/* lime */
+
+body.lime {
+  background-color: #e5f5a3;
+  color: #1d053a;
+}
+
+.lime a,
+.lime a:hover,
+.lime a:active,
+.lime a:visited {
+  color: #4d2d73;
+}
+
+/* dust */
+
+body.dust {
+  background-color: #d4946a;
+  color: #051a38;
+}
+
+.dust a,
+.dust a:hover,
+.dust a:active,
+.dust a:visited {
+  color: #2c4770;
 }
