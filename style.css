@@ -25,6 +25,13 @@ a:hover {
   font-size: 0.7em;
 }
 
+#discoball {
+  position: absolute;
+  top: 0;
+  right: 1em;
+  cursor: pointer;
+}
+
 /**
  *themes
  **/

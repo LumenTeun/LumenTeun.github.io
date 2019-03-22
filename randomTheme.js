@@ -8,4 +8,8 @@ function setThemeRandomly() {
   }
 }
 
+document
+  .querySelector("#discoball")
+  .addEventListener("click", setThemeRandomly);
+
 setThemeRandomly();
