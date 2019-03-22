@@ -33,6 +33,13 @@ a:hover {
   height: 14vmin;
 }
 
+#sneakyskel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 /**
  *themes
  **/
